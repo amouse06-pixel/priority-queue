@@ -1,13 +1,13 @@
-class PriorityQueue:  # объявляется класс
+class PriorityQueue:  # объявляем класс
 
-    def __init__(self):  # создание кучи
+    def __init__(self):  # создаем кучи
         self.heap = []  # создаем пустой список для кучи, элементы вида (priority, value) хранятся как кортежи
 
     def enqueue(self, value, priority):  # добавляем элемент
         self.heap.append((priority, value))  # кладем новый элемент в конец списка
         self._sift_up(len(self.heap) - 1)  # поднмаем элемент наверх, пока он не встанет на правильное место
 
-    def dequeue(self):  # достать главный элемент
+    def dequeue(self):  # достаем главный элемент
         if self.is_empty():
             raise IndexError(
                 "удаление из пустой кучи")  # поднимаем ошибку, если пытаться удалить элемент из пустой кучи
